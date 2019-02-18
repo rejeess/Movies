@@ -1,0 +1,32 @@
+.heading{
+    background-color: green;
+    font-family: arial;
+    color: white;
+    font-size: 14pt;
+    text-align:center;
+    padding: 3pt;
+}
+.btn{
+    float: center;
+    box-align:center;
+    font-size: 1em;
+   /* width: 70px;*/
+    background-color: gray;
+    color: white;
+    border-radius: 50px;
+    vertical-align: middle;
+   
+}
+.movie-img{
+    float: left;
+    width: 70px;
+    height: 90px;
+    padding-right: 5px;
+}
+.mov-text{
+    padding-left: 10px;
+    margin-left: 10px;
+}
+#mov-name{
+    color: darkblue;
+}
