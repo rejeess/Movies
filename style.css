@@ -2,20 +2,62 @@
     background-color: green;
     font-family: arial;
     color: white;
+    text-shadow: 4px 3px 2px rgb(48, 46, 46);
+    box-shadow: 0 10px 20px;
     font-size: 14pt;
     text-align:center;
-    padding: 3pt;
+    padding: 6pt;
+}
+.searchBar{
+    padding: 15pt;
+    /*border-radius: 25px;*/
+    background-color: lightgray;
+    /*background: transparent;*/
+    padding: 1.4em;
+    vertical-align: middle;
+    box-sizing: border-box;
+
+
+}
+.rating{
+    color: red;
 }
 .btn{
     float: center;
     box-align:center;
     font-size: 1em;
-   /* width: 70px;*/
-    background-color: gray;
+    font-weight: bold;
+    cursor: pointer;
+    /*width: 70px;*/
+   /* background-color: gray;*/
     color: white;
     border-radius: 50px;
     vertical-align: middle;
-   
+    text-align: center;
+    display: flex; justify-content: center;
+    border-radius: 25px;
+       
+}
+#nowPlaying{
+    background-color: gray;
+    color: white;
+    padding: 5pt;
+    font-weight: bold;
+    
+    
+
+}
+#comingSoon{
+    background-color: gray;
+    color: white;
+    padding: 5pt;
+    font-weight: bold;
+}
+#all{
+    background-color: gray;
+    color: white;
+    padding: 5pt;
+    font-weight: bold;
 }
 .movie-img{
     float: left;
