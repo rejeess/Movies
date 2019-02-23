@@ -5,7 +5,7 @@ var btn1        = document.getElementById("comingSoon");
 var btn2        = document.getElementById("all");
 var movieMore   = document.getElementsByClassName("movie-data");
 var api         = "http://api.kendomobilebook.com/api/Movies/GetMovieList/?listType=";
-var apiMovie    = "http://api.kendomobilebook.com/api/Theater/Get/?movieId=";
+var apiMovie    = "http://api.kendomobilebook.com/api/Theater/Get/?movieId=1";
 
 
 //http://api.kendomobilebook.com/api/Theater/Get/?movieId=1
@@ -52,10 +52,28 @@ function loadHTML(data) {
     pageDisplay.innerHTML=htmlString;
 }
 
-movieMore.addEventListener("click", function () {
+var movieList = pageDisplay.addEventListener("click", function () {
   ajaxcallMovDetails();
+
+//document.getElementsByClass("searchBar").onclick = none; 
+
+var theatreList = document.getElementsByClassName("heading");
+    theatreList.innerHTML="Theatres";
 });
 
+//if (movieList = clicked){
+
+
+
+function ajaxcallMovDetails(type) {
+    var urlRequest2 = new XMLHttpRequest();
+    urlRequest2.open('GET', apiMovie);
+    urlRequest2.onload = function () {
+        var movieData = JSON.parse(urlRequest2.responseText);
+        loadHTML(movieData);
+    };
+    urlRequest2.send();
+}
 function loadMovieHTML(data) {
     var htmlMovieString = "";
 
@@ -65,19 +83,9 @@ function loadMovieHTML(data) {
         htmlMovieString += "<p class = 'mov-moreDetails' class='mov-text'>" + data[i].Address + "," + " </p>";
 
     }
-    console.log(htmlMovieString);yield 
+    console.log(htmlMovieString);
     // pageDisplay.insertAdjacentHTML(htmlString); This line was creating the issue .
     pageDisplay.innerHTML=htmlMovieString;
-}
-
-function ajaxcallMovDetails(type) {
-    var urlRequest2 = new XMLHttpRequest();
-    urlRequest2.open('GET', apiMovie + type);
-    urlRequest2.onload = function () {
-        var movieData = JSON.parse(urlRequest2.responseText);
-        loadHTML(movieData);
-    };
-    urlRequest2.send();
 }
 
 // function loadHTML(data) {
